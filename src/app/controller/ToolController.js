@@ -15,14 +15,6 @@ class ToolController {
     return res.json(user);
   }
 
-  async show(req, res) {
-    const value = req.query.tag;
-
-    const tool = await Tool.findAll({ where: { tag: value } });
-
-    return res.json(tool);
-  }
-
   async store(req, res) {
     const { user_id } = req.params;
     const { title, link, description, tags } = req.body;
